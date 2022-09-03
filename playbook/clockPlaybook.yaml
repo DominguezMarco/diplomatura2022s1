@@ -1,0 +1,20 @@
+---
+- name: clockPlaybook
+  hosts:
+    - local
+  become: False
+  gather_facts: True
+  vars:
+    host: "{{ ansible_hostname | upper }}"
+  tasks:
+    - name: Prepare host
+      package: 
+        name: 
+          - docker-ce
+    - name: Create a clockapp container
+      docker_container:
+        name: clockContainer
+        image: marcodominguez/diplomatura2022s1:latest
+        state: started
+        recreate: yes
+        restart: yes
