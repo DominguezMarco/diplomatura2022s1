@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY app/* .
 
-CMD ["python", "clock.py"]
+CMD ["python", "program.py"]
