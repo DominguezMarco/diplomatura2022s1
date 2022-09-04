@@ -1,5 +1,5 @@
 ---
-- name: clockPlaybook
+- name: programPlaybook
   hosts:
     - local
   become: False
@@ -11,10 +11,10 @@
       package: 
         name: 
           - docker-ce
-    - name: Create a clockapp container
+    - name: Create a program container
       docker_container:
-        name: clockContainer
-        image: marcodominguez/diplomatura2022s1:latest
+        name: programContainer
+        image: marcodominguez/diplomatura2022s1:10
         state: started
         recreate: yes
         restart: yes
